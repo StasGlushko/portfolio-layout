@@ -1,0 +1,109 @@
+.dribble {
+   max-width: rem(1076);
+   width: 100%;
+   margin: 0 auto;
+
+   @include adaptiveValue("padding-top", 120, 32);
+   @include adaptiveValue("padding-bottom", 120, 32);
+   @include adaptiveValue("padding-left", 72, 10);
+   @include adaptiveValue("padding-right", 72, 10);
+
+
+   // .dribble__title
+
+   &__title {
+      margin-bottom: rem(24);
+   }
+
+   // .dribble__text
+
+   &__text {
+      color: $LightGray;
+      margin-bottom: rem(40);
+      max-width: rem(636);
+   }
+
+   // .dribble__btn
+
+   &__btn {
+      display: block;
+      color: $DarkGray;
+      border-bottom-color: $DarkGray;
+   }
+
+   // .dribble__fix-bg
+
+   &__fix-bg {
+      @include adaptiveValue("margin-top", 200, 140);
+      height: rem(640);
+      width: 100%;
+      border-radius: rem(8);
+      overflow: hidden;
+   }
+
+   // .dribble__fix-bg--header
+
+   &__fix-bg--header {
+      padding-left: rem(16);
+      border-radius: rem(8) rem(8) 0 0;
+      width: 100%;
+      height: rem(37);
+      background-color: $LightBlack;
+      display: flex;
+      align-items: center;
+      gap: rem(6);
+   }
+
+   &__dots {
+      border-radius: 50%;
+      background-color: $LightGray;
+      height: rem(18);
+      width: rem(18);
+
+   }
+
+   // .dribble__fix-bg--img
+
+   &__fix-bg--img {
+      // background: url('../img/dribble-bg.jpg') center / cover no-repeat fixed;
+      background-image: url('../img/dribble-bg.jpg');
+      background-position: 50% 50%;
+      background-size: 1024px;
+      background-repeat: repeat;
+      background-attachment: fixed;
+      width: 100%;
+      height: rem(640);
+      position: relative;
+      overflow: hidden;
+
+   }
+
+   &__fix-bg--parallax {
+      // position: absolute;
+      // bottom: rem(200);
+      // left: 0;
+      // width: 100%;
+      // height: 160%;
+      // object-fit: cover;
+      // transition: all .08s linear;
+      // border-radius: rem(8) rem(8) 0 0;
+   }
+}
+
+@media (min-width:$tablet){
+    .dribble {
+
+      &__fix-bg {
+         height: rem(580);
+      }
+
+      &__fix-bg--img {
+         height: rem(580);
+
+      }
+
+      &__fix-bg--parallax {
+         height: 140%;
+      }
+    } 
+}

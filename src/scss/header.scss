@@ -1,0 +1,134 @@
+.header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: transparent;
+
+   max-width: rem(1940);
+   width: 100%;
+   margin: 0 auto;
+   @include adaptiveValue("padding-left", 72, 24);
+   @include adaptiveValue("padding-right", 72, 24);
+
+
+   // .header__logo
+
+   &__logo {
+      & a {
+      display: block;
+
+      @include adaptiveValue("padding-top", 26, 24);
+      @include adaptiveValue("padding-bottom", 26, 24);
+      }
+   }
+
+   // .header__menu
+
+   &__menu {
+   }
+}
+
+.menu {
+   display: flex;
+
+   // .menu__icon
+
+   &__icon {
+      cursor: pointer;
+      @media (min-width:$mobile){
+           display: none;
+      }
+   }
+
+   &__burger {
+      & img {
+         display: inline-block;
+      }
+   }
+
+
+   // .menu__body
+
+   &__body {
+      
+   }
+
+   // .menu__list
+
+   &__list {
+      flex-wrap: wrap;
+      @media (min-width:$mobile){
+         display: flex;
+      }
+   }
+
+   // .menu__link
+
+   &__link {
+      display: block;
+      line-height: 150%;
+      transition: color .35s cubic-bezier(.165, .84, .44, 1), background-color .35s cubic-bezier(.165, .84, .44, 1);
+      color: rgba(#fff, .7);
+      @include adaptiveValue("padding-right", 24, 16.8);
+      @include adaptiveValue("padding-left", 24, 16.8);
+      @include adaptiveValue("padding-top", 32, 22.4);
+      @include adaptiveValue("padding-bottom", 32, 22.4);  
+
+      
+      &:hover {
+         color: $LightBlue;
+      }
+
+      // .menu__link_active
+
+      &_active {
+         color: #fff;
+         background-color: $Primary;
+         &:hover {
+            background-color: #6034e1;
+         }
+      }
+   }
+}
+
+// Медіа запрос
+
+@media (max-width:$mobile){
+   .header {
+      z-index: $header;
+      background-color: $Black;
+   }
+
+   .menu__link {
+   border-bottom: 1px solid hsla(0, 0%, 100%, 0.12);
+   background-color: $LightBlack;
+   color: rgba(#fff, 1.0);
+
+   
+      &_active {
+         background-color: $Primary;
+         color: rgba(#fff, 1.0);
+      }
+
+   } 
+
+   .menu__body {
+   z-index: $menu__body;
+   position: absolute;
+   top: rem(72);
+   left: -100%;
+   width: 100%;
+
+   opacity: .8;
+   
+   transition: left .4s ease-in-out;
+
+      &._active {
+         left: 0;
+      }
+
+   }
+}
+
+
+// Анімація появлення

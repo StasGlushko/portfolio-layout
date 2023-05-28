@@ -1,0 +1,105 @@
+.mid {
+   display: flex;
+   max-width: 100%;
+   margin: 0 auto;
+   width: rem(1900);
+
+   // .mid__info
+
+   &__info {
+      overflow: auto;
+      max-height: rem(290);
+      max-width: rem(576);
+
+      &::-webkit-scrollbar {
+         width: rem(5);
+         height: rem(5);
+      }
+      &::-webkit-scrollbar-track-piece {
+         background-color: $PeachAccent;
+      }
+      &::-webkit-scrollbar-thumb:vertical {
+         height: rem(5);  
+         background-color: $LightBlack;
+      }
+      &::-webkit-scrollbar-thumb:horizontal {
+         width: rem(5);
+         background-color: $LightBlack;
+      }
+   }
+   
+   // .mid__wrappew
+
+   &__wrapper {
+      @include adaptiveValue("height", 600, 450);
+
+
+      position: relative;
+      background-color: $PeachAccent;
+      min-width: 50%;
+      
+      color: $Black;
+
+
+      @include adaptiveValue("padding-bottom", 120, 40);
+      @include adaptiveValue("padding-top", 120, 40);
+      @include adaptiveValue("padding-right", 72, 10);
+      @include adaptiveValue("padding-left", 72, 10);
+   }
+
+   // .mid__title
+
+   &__title {
+      padding-bottom: rem(24);
+
+      @include adaptiveValue("font-size", 55, 32);
+   }
+
+   // .mid__text
+
+   &__text {
+      line-height: 150%;
+   }
+
+   // .mid__button
+
+   &__button {
+      color: $Black;
+      bottom: rem(60);
+
+   }
+
+   // .mid__photo
+
+   &__photo {
+      min-width: 50%;
+      background: url('../img/mid-bg.jpg') 50% 50%/cover no-repeat;
+   }
+}
+
+// mid-2
+
+.mid {
+   &__photo-2 {
+      min-width: 45%;
+      background: url('../img/mid-bg2.jpg') 50% 50%/cover no-repeat;
+   }
+   &__info-2 {
+      min-width: 55%;
+   }
+}
+
+// Брейкпойнти
+
+@media (max-width:$mobile){
+    .mid {
+      flex-direction: column;
+      
+      &__photo {
+
+         width: 100%;
+         height: 50vh;
+      }
+    } 
+}
+

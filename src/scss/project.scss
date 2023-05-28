@@ -1,0 +1,182 @@
+.project {
+   max-width: rem(1450);
+   width: 100%;
+   margin: 0 auto;
+
+   @include adaptiveValue("padding-top", 120, 32);
+   @include adaptiveValue("padding-bottom", 120, 32);
+   @include adaptiveValue("padding-left", 72, 10);
+   @include adaptiveValue("padding-right", 72, 10);
+
+   
+   // .project__wraper
+
+   &__wraper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: rem(24);
+   }
+
+   // .project__header
+
+   &__header {
+      margin-bottom: rem(25);
+      width: 100%;
+      height: rem(221);
+   }
+
+   &__sub-title {
+      color: $LightGray;
+      font-weight: normal;
+      margin-bottom: rem(8);
+   }
+
+   &__title {
+      max-width: 500px;
+   }
+
+   // .project__card
+
+   &__card {
+      background-color: $LightBlack;
+      overflow: hidden;
+      margin-bottom: rem(25);
+      width: 100%; 
+      transition: all .3s ease;
+      cursor: pointer;
+
+      
+
+      &:hover {
+         transform: scale(1.028);
+
+
+         & .card-project__title {
+            color: $LightBlue;
+            margin-left: rem(5);
+         }
+
+         & .card-project__arrow {
+            right: 0;
+            bottom: 0;
+         }
+      }
+   }
+
+   &__card-more {
+      display: none;
+   }
+
+   &__card-more--active {
+      display: block;
+   }
+
+
+
+   // .project__btn
+
+   &__btn {
+      overflow: hidden;
+      margin-bottom: rem(25);
+      width: 100%;
+      height: rem(210);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   // .project__button
+ 
+   &__button {
+
+   }
+
+}
+
+.card-project {
+
+   position: relative;
+
+   &__image {
+      & img {
+         width: 100%;
+         max-height: rem(636);
+      }
+   }
+
+   &__info {
+      @include adaptiveValue("padding-top", 40, 24);
+      @include adaptiveValue("padding-bottom", 40, 24);
+      @include adaptiveValue("padding-left", 32, 20);
+      @include adaptiveValue("padding-right", 32, 20);
+   }
+
+   &__title {
+      margin-bottom: rem(18);
+      transition: all .3s ease;
+      line-height: 140%;
+
+
+   }
+
+   &__text {
+      line-height: 150%;
+      color: $LightGray;
+      max-width: rem(554);
+
+      @include adaptiveValue("max-width", 554, 237);
+   }
+
+   &__arrow {
+      position: absolute;
+      
+      @include adaptiveValue("padding", 16, 11);
+      background-color: $Primary;
+      bottom: rem(-56);
+      right: rem(-56);
+
+      transition: all .3s ease;
+
+      & img {
+         width: rem(16);
+         height: rem(16);
+      }
+   }
+
+}
+
+
+// брейкпойнти
+
+@media (max-width: $mobile){
+
+   .project {
+
+      &__wraper {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+      }
+
+      &__card {
+         width: 100%;
+      }
+
+      &__header {
+         height: rem(180);
+      }
+
+      &__btn {
+         height: rem(100);
+      }
+   }
+
+
+   .card-project {
+      &__text {
+         @include adaptiveValue("max-width", 1400, 237);
+      }
+   }
+}
+

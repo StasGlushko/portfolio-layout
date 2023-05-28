@@ -1,0 +1,141 @@
+.talk {
+
+   display: flex;
+   gap: rem(24);
+   
+   margin: 0 auto;
+   max-width: rem(1200);
+   width: 100%;
+   @include adaptiveValue("padding-top", 120, 32);
+   @include adaptiveValue("padding-bottom", 120, 32);
+   @include adaptiveValue("padding-left", 72, 10);
+   @include adaptiveValue("padding-right", 72, 10);
+
+   // .talk__info
+
+   &__info {
+      max-width: rem(526);
+   }
+
+   // .talk__title
+
+   &__title {
+      margin-bottom: rem(24);
+   }
+
+   // .talk__text
+
+   &__text {
+      color: $LightGray;
+   }
+
+   // .talk__form
+
+   &__form {
+   }
+}
+.form-talk {
+
+   max-width: rem(526);
+   width: 100%;
+
+   // .form-talk__name
+
+   &__name {
+      margin-bottom: rem(8);
+      font-size: 16;
+      font-weight: normal;
+   }
+
+   // .form-talk__input-n
+
+   &__input-n {
+      & input {
+         width: 100%;
+         height: rem(50);
+         color: white;
+         background-color: $LightBlack;
+         margin-bottom: rem(40);
+         padding-left: rem(17);
+      }
+   }
+
+   // .form-talk__email
+
+   &__email {
+      margin-bottom: rem(8);
+      font-size: 16;
+      font-weight: normal;
+   }
+
+   // .form-talk__input-e
+
+   &__input-e {
+      & input {
+         width: 100%;
+         height: rem(50);
+         color: white;
+         background-color: $LightBlack;
+         margin-bottom: rem(40);
+         padding-left: rem(17);
+      }
+      
+   }
+
+   // .form-talk__message
+
+   &__message {
+      margin-bottom: rem(8);
+      font-size: 16;
+      font-weight: normal;
+   }
+
+   // .form-talk__input-m
+
+   &__btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: rem(24);
+      background-color: $Primary;
+      margin-top: rem(40);
+      transition: all .3s ease;
+
+
+      &:hover {
+         background-color: #693af4;
+      }
+      
+   }
+
+   // .form-talk__input-m
+
+   &__input-m {
+      & textarea {
+         width: 100%;
+         height: rem(100);
+         color: white;
+         background-color: $LightBlack;
+         padding: rem(16);
+         resize: none;
+      }
+   }
+}
+
+
+// брейкпойнти 
+
+@media (max-width:$mobile){
+   .talk {
+      flex-direction: column;
+
+      &__form {
+         margin: 0 auto;
+      }
+
+      &__info {
+         margin: 0 auto;
+      }
+   } 
+}

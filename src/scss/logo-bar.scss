@@ -1,0 +1,52 @@
+.logo-bar {
+   overflow-y: hidden;
+   max-width: rem(1900);
+   width: 100%;
+   margin: 0 auto;
+   // .logo-bar__items
+
+   &__items {
+      display: flex;
+
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+         display: none;
+      }
+   }
+
+   // .logo-bar__item
+
+   &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: rem(140);
+      min-width: rem(320);
+
+      border: 1px solid #181823;
+
+      
+   }
+}
+
+
+// Брейкпойнти
+
+@media (max-width:$mobile){  
+   .logo-bar {
+
+      &__items {
+         flex-wrap: wrap;
+      }
+      &__item {
+         min-width: 50%;
+         max-width: 50%;
+         & a {
+            & img {
+               max-width: rem(135);
+            }
+         }
+      }
+   } 
+}

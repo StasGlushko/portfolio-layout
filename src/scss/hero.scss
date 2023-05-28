@@ -1,0 +1,97 @@
+.hero {
+   min-height: 100vh;
+
+
+   // .hero__flex-box
+
+   &__flex-box {
+      display: flex;
+   }
+
+   // .hero__photo
+
+   &__photo {
+      background: url('../img/photo.jpg') 50% 50%/cover no-repeat;
+      // position: absolute;
+      // top: 0;
+      margin-top: rem(37);
+      margin-bottom: rem(125);
+      z-index: $hero__photo;
+      width: 55vw;
+      height: 80vh;
+   }
+
+   // .hero__info
+
+   &__info {
+      width: 100%;
+      margin-right: rem(40);
+      margin-left: rem(-70);
+
+      @include adaptiveValue("margin-top", 160, 90);
+      @include adaptiveValue("max-width", 720, 320);
+   }
+
+   // .hero__title
+
+   &__title {
+      line-height: rem(96);
+
+      @include adaptiveValue("margin-bottom", 32, 16);
+      @include adaptiveValue("line-height", 96, 38.5);
+      @include adaptiveValue("font-size", 76, 28);
+
+      & span {
+         opacity: .5;
+      }
+   }
+
+   // .hero__text
+
+   &__text {
+      line-height: 150%;
+   }
+
+   // .hero__bg
+
+   &__bg {
+      height: 110vh;
+      width: 65vw;
+      background-color: $LightBlack;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: $hero__bg;
+   }
+}
+
+
+
+@media (max-width:$mobile){
+   .hero {
+      &__flex-box {
+         flex-direction: column;
+      }
+
+      &__photo {
+         margin: 0 0 0 0;
+         width: 100%;
+
+         @include adaptiveValue("height", 800, 280);
+      }
+
+      &__info {
+         margin: 0;
+         max-width: 100%;
+         padding: rem(48) 0;
+         background-color: $LightBlack;
+
+         @include adaptiveValue("padding-right", 50, 10);
+         @include adaptiveValue("padding-left", 50, 10);
+      }
+
+      &__bg {
+         display: none;
+      }
+   }    
+}

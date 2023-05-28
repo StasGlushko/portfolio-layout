@@ -1,0 +1,86 @@
+.footer {
+   background-color: $LightBlack;
+   max-height: rem(422);
+   
+   margin: 0 auto;
+   max-width: rem(1900);
+   width: 100%;
+   @include adaptiveValue("padding-top", 120, 32);
+   @include adaptiveValue("padding-bottom", 120, 32);
+   @include adaptiveValue("padding-left", 72, 10);
+   @include adaptiveValue("padding-right", 72, 10);
+
+   // .footer__flex
+
+   &__flex {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   // .footer__main
+
+   &__main {
+   }
+
+   // .footer__logo
+
+   &__logo {
+      margin-bottom: rem(32);
+   }
+
+   // .footer__social
+
+   &__social {
+      margin-bottom: rem(40);
+      & img {
+         margin-right: rem(8);
+      }
+   }
+
+   // .footer__nav
+
+   &__nav {
+      max-height: rem(190);
+      display: grid;
+      grid-template-columns: repeat(2, rem(196));
+      gap: rem(24);
+
+      margin-bottom: rem(55);
+
+      @include adaptiveValue("margin-right", 80, 0);
+
+      & li {
+         line-height: 150%;
+         transition: all .3s ease;
+
+         &:hover {
+            color: $LightBlue;
+         }
+      }
+   }
+
+   // .footer__bottom
+
+   &__bottom {
+      color: $LightGray;
+      width: 100%;
+   }
+}
+
+
+// брейкпойнти 
+
+@media (max-width:$mobile){
+   .footer {
+      max-height: 100%;
+      &__flex {
+         flex-direction: column;
+      }
+
+      &__nav {
+         gap: 0;
+         row-gap: rem(25);
+         grid-template-columns: repeat(2, rem(130));
+      }
+   } 
+}

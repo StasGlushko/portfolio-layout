@@ -1,0 +1,273 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+
+
+	"Розділення": {
+		// "scope": "",
+		"prefix": "/..",
+		"body": [
+			"//========================================================================================================================================================\n$1"
+		],
+		// "description": ""
+	},
+	"Adaptiv Value": {
+		"scope": "scss",
+		"prefix": "av",
+		"body": [
+			"@include adaptiveValue(\"${1:font-size}\", $2, $3);"
+		],
+		"description": "Адаптивное свойство (clamp): CSS-свойство, начальное значение, конечное значение, ширина начальная, ширина конечная"
+	},
+	"EM": {
+		"scope": "scss",
+		"prefix": "em",
+		"body": [
+			"em($1,$2)"
+		],
+		"description": "Вызов миксина перевода в EM"
+	},
+	"REM": {
+		"scope": "scss",
+		"prefix": "rem",
+		"body": [
+			"rem($1)"
+		],
+		"description": "Вызов миксина перевода в REM"
+	},
+	"Percent": {
+		"scope": "scss",
+		"prefix": "prc",
+		"body": [
+			"percent($1,$2)"
+		],
+		"description": "Вызов миксина перевода в %"
+	},
+	"Percent padding": {
+		"scope": "scss",
+		"prefix": "pbp",
+		"body": [
+			"padding-bottom: percent($1,$2);"
+		],
+		"description": "Отступ вниз с указанием %"
+	},
+	"Font Size in REM": {
+		"scope": "scss",
+		"prefix": "fz",
+		"body": [
+			"font-size: rem($1);"
+		],
+		"description": "Переводит PX в REM"
+	},
+	"Width with REM": {
+		"scope": "scss",
+		"prefix": "w",
+		"body": "width: rem($1);",
+		"description": "Добавляет width c переводом в REM"
+	},
+	"Height with REM": {
+		"scope": "scss",
+		"prefix": "h",
+		"body": "height: rem($1);",
+		"description": "Добавляет height c переводом в REM"
+	},
+	"Margin bottom with REM": {
+		"scope": "scss",
+		"prefix": "mb",
+		"body": "margin-bottom: rem($1);",
+		"description": "Добавляет нижний отступ c переводом в REM"
+	},
+	"Margin top with REM": {
+		"scope": "scss",
+		"prefix": "mt",
+		"body": "margin-top: rem($1);",
+		"description": "Добавляет верхний отступ c переводом в REM"
+	},
+	"Margin bottom with EM": {
+		"scope": "scss",
+		"prefix": "mbe",
+		"body": "margin-bottom: em($1, $2);",
+		"description": "Добавляет нижний отступ c переводом в EM"
+	},
+	"Not last-child": {
+		"scope": "scss",
+		"prefix": "nlc",
+		"body": [
+			"&:not(:last-child) {\n\t$1\n}"
+		],
+		"description": "Исключая последний объект"
+	},
+	"Max width": {
+		"scope": "scss",
+		"prefix": "mw",
+		"body": "max-width: rem($1);",
+		"description": "Максимальная ширина"
+	},
+	"@media max": {
+		"prefix": "md",
+		"body": [
+			"@media (max-width: em($1)){\n\t $2 \n}"
+		],
+		"description": "Добавляет медиазапрос max-width c переводом в EM"
+	},
+	"@media min": {
+		"prefix": "mmd",
+		"body": [
+			"@media (min-width:em($1)){\n\t $2 \n}"
+		],
+		"description": "Добавляет медиазапрос min-width c переводом в EM"
+	},
+	"ps": {
+		"prefix": "ps",
+		"body": [
+			"position: absolute;width: 100%;height: 100%;top: 0;left: 0;"
+		],
+		"description": "position absolute"
+	},
+	"bs": {
+		"prefix": "bs",
+		"body": [
+			"box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"
+		],
+		"description": "bs"
+	},
+	"lc": {
+		"prefix": "lc",
+		"body": [
+			"&:last-child{\n\t$0\n}"
+		],
+		"description": "lc"
+	},
+	"fc": {
+		"prefix": "fc",
+		"body": [
+			"&:first-child{\n\t$0\n}"
+		],
+		"description": "fc"
+	},
+	"nc": {
+		"prefix": "nc",
+		"body": [
+			"&:nth-child($0){}"
+		],
+		"description": "nc"
+	},
+	"BeforeAfter": {
+		"prefix": "ba",
+		"body": [
+			"&::before,&::after{\n\tcontent:'';\n\t$0\n}"
+		],
+		"description": "ba"
+	},
+	"After": {
+		"prefix": "a",
+		"body": [
+			"&::after{\n\tcontent:'';\n\t$0\n}"
+		],
+		"description": "after"
+	},
+	"Before": {
+		"prefix": "b",
+		"body": [
+			"&::before{\n\tcontent:'';\n\t$0\n}"
+		],
+		"description": "before"
+	},
+	"hv": {
+		"prefix": "hv",
+		"body": [
+			"&:hover{\n\t$0\n}"
+		],
+		"description": "hv"
+	},
+	"acc": {
+		"prefix": "acc",
+		"body": [
+			"&:active{\n\t$0\n}"
+		],
+		"description": "acc"
+	},
+	"ac_css": {
+		"scope": "scss,css",
+		"prefix": "ac",
+		"body": [
+			"&._active{\n\t$0\n}"
+		],
+		"description": "ac_css"
+	},
+	"bg+": {
+		"prefix": "bg+",
+		"body": [
+			"background: url('@img$0') 0 0 no-repeat;"
+		],
+		"description": "bg+"
+	},
+	"md1": {
+		"prefix": "md1",
+		"body": [
+			"@media (max-width:\\$pc){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"mmd1": {
+		"prefix": "mmd1",
+		"body": [
+			"@media (min-width:\\$pc){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"md2": {
+		"prefix": "md2",
+		"body": [
+			"@media (max-width:\\$tablet){\n\t$0\n}"
+		],
+		"description": "md2"
+	},
+	"mmd2": {
+		"prefix": "mmd2",
+		"body": [
+			"@media (min-width:\\$tablet){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"md3": {
+		"prefix": "md3",
+		"body": [
+			"@media (max-width:\\$mobile){\n\t $0 \n}"
+		],
+		"description": "md3"
+	},
+	"mmd3": {
+		"prefix": "mmd3",
+		"body": [
+			"@media (min-width:\\$mobile){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"md4": {
+		"prefix": "md4",
+		"body": [
+			"@media (max-width:\\$mobileSmall){\n\t $0 \n}"
+		],
+		"description": "md4"
+	},
+	"mmd4": {
+		"prefix": "mmd4",
+		"body": [
+			"@media (min-width:\\$mobileSmall){\n\t $0 \n}"
+		],
+		"description": "md1"
+	},
+	"ex": {
+		"prefix": "ex",
+		"body": [
+			"@extend %${1:};"
+		],
+		"description": "ex"
+	},
+}

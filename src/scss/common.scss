@@ -1,0 +1,95 @@
+// Заголовки, загальні БЕМ блоки, та інше...
+
+body {
+   &::-webkit-scrollbar {
+      width: rem(5);
+      height: rem(5);
+   }
+   &::-webkit-scrollbar-track-piece {
+      background-color: $Black;
+   }
+   &::-webkit-scrollbar-thumb:vertical {
+      height: rem(5);  
+      background-color: $LightBlack;
+   }
+   &::-webkit-scrollbar-thumb:horizontal {
+      width: rem(5);
+      background-color: $LightBlack;
+   }
+}
+
+.logo {
+   font-family: 'Oswald', sans-serif;
+   font-weight: 700;
+   font-size: rem(24);
+}
+
+button {
+   font-weight: 700;
+   font-size: rem(18);
+}
+
+h1, h2, h3, h4, h5 {
+   font-weight: 700;
+}
+
+h1 {
+   font-size: rem(76);
+}
+
+h2 {
+   @include adaptiveValue("font-size", 55, 32);
+}
+
+h3 {
+   font-size: rem(24);
+}
+
+h4 {
+   font-size: rem(18);
+}
+
+h5 {
+   font-size: rem(16);
+}
+
+p {
+   font-size: rem(18);
+   line-height: 150%;
+}
+
+h6 {
+   font-size: rem(16);
+}
+
+.button {
+   padding-bottom: rem(5);
+   padding-top: rem(5);
+   line-height: 150%;
+   border-bottom: 1px solid #000;
+   position: absolute;
+   transition: all .4s ease;
+
+   &:hover {
+      padding-right: rem(10);
+      padding-left: rem(10);
+      background-color: $Primary;
+      border-bottom: 1px solid $Primary;
+      color: white;
+   }
+}
+
+.button-2 {
+   padding: rem(24) rem(32);
+   border: 1px solid $Primary;
+   transition: all .4s ease;
+
+   &:hover {
+      margin-bottom: rem(10);
+      padding: rem(23) rem(30);
+      background-color: $Primary;
+      -webkit-box-shadow: 0px 10px 27px 4px rgba(82,33,230,0.76);
+      -moz-box-shadow: 0px 10px 27px 4px rgba(82,33,230,0.76);
+      box-shadow: 0px 10px 27px 4px rgba(82,33,230,0.76);
+   }
+}
