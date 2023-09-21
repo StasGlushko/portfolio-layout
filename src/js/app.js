@@ -100,16 +100,16 @@ tab();
 
 // parallax
 
-// let parallaxImg = document.querySelector('.js-parallax'),
-//     section = document.querySelector('.js-section');
+let parallaxImg = document.querySelector('.js-parallax'),
+    section = document.querySelector('.js-section');
 
-// function scrollParallax() {
-//    let offsetTop = window.innerHeight - section.getBoundingClientRect().top;
-//    parallaxImg.style.transform = 'translateY('+ 0.3 * offsetTop +'px)';
-// }
+function scrollParallax() {
+   let offsetTop = window.innerHeight - section.getBoundingClientRect().top;
+   parallaxImg.style.transform = 'translateY('+ 0.3 * offsetTop +'px)';
+}
 
-// scrollParallax();
+scrollParallax();
 
-// document.onscroll = function () {
-//    scrollParallax();
-// }
+document.onscroll = function () {
+   scrollParallax();
+}
